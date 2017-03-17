@@ -1,0 +1,9 @@
+#mapScrollPane
+{
+	-fx-background-color: white;
+}
+
+#mapScrollPane .viewport
+{
+	-fx-background-color: white;
+}

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	
+<?import at.ac.wu.seramis.rtlssimulator.gui.component.Map?>
+<?import java.net.URL?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import org.controlsfx.control.CheckListView?>
+<?import org.controlsfx.glyphfont.Glyph?>
+<?import javafx.scene.control.Tooltip?>
+<?import org.controlsfx.control.NotificationPane?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="at.ac.wu.seramis.rtlssimulator.gui.SimulatorGUIController">
+	<stylesheets>
+    	<URL value="@style.css" />
+	</stylesheets>
+	<center>	
+		<NotificationPane fx:id="notificationPNE" showFromTop="false"> 
+		  	<content>
+				<AnchorPane>
+			    	<Map fx:id="rtlsMap" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" />
+			    </AnchorPane>
+			</content>
+		</NotificationPane>
+	</center>
+	<right>
+		<AnchorPane>
+			<VBox spacing="5" AnchorPane.topAnchor="5" AnchorPane.bottomAnchor="5" AnchorPane.leftAnchor="5" AnchorPane.rightAnchor="5">
+				<TitledPane text="Initial State" collapsible="false">
+					<GridPane hgap="10" vgap="5">
+				  		<Label text="Number of Classes"  GridPane.columnIndex="1" GridPane.rowIndex="1" />
+			  			<TextField fx:id="numberOfClassesTXT" text="40" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+			  			
+			  			<Label text="Number of Items" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+			  			<TextField fx:id="numberOfItemsTXT" text="5000" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+		
+			  			<Label text="Dispersion" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+			  			<TextField fx:id="dispersionTXT" text="50" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+			  			
+			  			<Label text="Clusters Ratio" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+			  			<TextField fx:id="clustersRatioTXT" text="1.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+			  					  			
+			  			<Button fx:id="generateInitialStateBTN" text="Generate" onAction="#handleGenerateInitialStateBTNAction" GridPane.columnSpan="2" GridPane.rowIndex="5" GridPane.fillWidth="true" />
+			  		</GridPane>
+			  	</TitledPane>
+			  	<TitledPane text="Misplacement" collapsible="false">
+					<GridPane hgap="10" vgap="5">
+				  		<Label text="Number of Misplaced Items"  GridPane.columnIndex="1" GridPane.rowIndex="1" />
+			  			<TextField fx:id="numberOfMisplacedItemsTXT" text="10" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+			  			
+			  			<Button fx:id="performMisplacementBTN" text="Misplace" onAction="#handlePerformMisplacementBTNAction" GridPane.columnSpan="2" GridPane.rowIndex="2" GridPane.fillWidth="true" disable="true" />
+			  		</GridPane>
+			  	</TitledPane>
+			  	<TitledPane text="Sensing" collapsible="false">
+					<GridPane hgap="10" vgap="5">
+				  		<Label text="Accuracy"  GridPane.columnIndex="1" GridPane.rowIndex="1" />
+			  			<TextField fx:id="sensingAccuracyTXT" text="0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+			  			
+			  			<Label text="Missingness" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+			  			<TextField fx:id="sensingMissingnessTXT" text="5" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+			  			
+			  			<Button fx:id="generateSnapshotBTN" text="Snapshot" onAction="#handleGenerateSnapshotBTNAction" GridPane.columnSpan="2" GridPane.rowIndex="3" GridPane.halignment="CENTER" disable="true" />
+			  		</GridPane>
+			  	</TitledPane>
+			  	<TitledPane text="Map Layers" collapsible="false">
+			  		<CheckListView fx:id="mapLayerCLV" />
+			  	</TitledPane>
+			  	<Button fx:id="svgSnapshotBTN" text="SVG" onAction="#handleSVGSnapshotBTNAction" maxWidth="Infinity">
+			  		<graphic>
+						<Glyph fontFamily="FontAwesome" icon="CAMERA" />
+					</graphic>
+				</Button>
+				<Button fx:id="automaticGenerationBTN" text="Automated Generation" onAction="#handleAutomaticGenerationBTNAction" maxWidth="Infinity">
+			  		<graphic>
+						<Glyph fontFamily="FontAwesome" icon="COGS" />
+					</graphic>
+					<tooltip>
+				        <Tooltip text="Executes each step for all values entered in the text fields above separated by a comma (',')."/>
+				    </tooltip>
+				</Button>
+		  	</VBox>
+		</AnchorPane>
+	</right>
+</BorderPane>

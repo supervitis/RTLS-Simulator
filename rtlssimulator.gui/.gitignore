@@ -1,0 +1,13 @@
+bin/
+
+target/
+
+.settings/
+*.csv
+/.~lock.snapshot_1487076297118.csv#
+/.~lock.misplaced_1487091796108.csv#
+/.~lock.misplaced_1487091995033.csv#
+/.~lock.misplaced_1487092123017.csv#
+/.~lock.misplaced_1487092747344.csv#
+/.~lock.misplaced_1487254831095.csv#
+/csv/

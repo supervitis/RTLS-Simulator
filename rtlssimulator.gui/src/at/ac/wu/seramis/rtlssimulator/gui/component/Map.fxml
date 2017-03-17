@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<fx:root xmlns:fx="http://javafx.com/fxml" type="AnchorPane" centerShape="true" style="-fx-fill: white;"></fx:root>
